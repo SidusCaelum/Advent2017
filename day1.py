@@ -1,13 +1,11 @@
-def calculate(testInput):
-    skip = len(testInput) / 2
-    total = 0
-    for i in range(0, len(testInput)):
-        if(i == (len(testInput)-1)):
-            if(testInput[i] == testInput[0]):
-                total += int(testInput[i])
-        elif testInput[i] == testInput[i+1]:
-            total += int(testInput[i])
-    return total
+"""Day 1 Advent code 2017"""
 
-final = calculate(input(""))
-print(final)
+
+with open('input.txt', 'r') as inp:
+    s = inp.read().strip()
+
+# First part
+print(sum(int(x) for x, y in zip(s[-1] + s, s) if x == y))
+
+# Second part
+print(2 * sum(int(x) for x, y in zip(s, s[len(s) // 2:]) if x == y))
