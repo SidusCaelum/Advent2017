@@ -7,7 +7,5 @@ with open('input2.txt', 'r') as inp:
 # First part
 print(sum(int(x) for x, y in zip(S[-1] + S, S) if x == y))
 
-print(list(zip(S[-1] + S, S)))
-
 # Second part
 print(2 * sum(int(x) for x, y in zip(S, S[len(S) // 2:]) if x == y))
